@@ -1,0 +1,308 @@
+#!/usr/bin/python
+#coding=utf-8
+import os, sys
+import MySQLdb
+import time
+import datetime
+import KfkClient
+import json
+
+debug_flag=0
+lines_max=13
+
+realtime_log_file = '/home/labadmin/ramfs/realtime_log/va_result.%s'
+
+va_result_dictionary = {}
+
+def update_dictionary(func, lineid, timestr, **args):
+    timefmt = "%s-%s-%s %s:%s:%s" %(timestr[0:4], timestr[4:6], timestr[6:8], timestr[8:10], timestr[10:12], timestr[12:14])
+ 
+    if func not in va_result_dictionary:
+        va_result_dictionary[func] = {}
+        va_result_dictionary[func]['count'] = 0
+    if lineid not in va_result_dictionary[func]:
+        va_result_dictionary[func][lineid] = {}
+
+    va_result_dictionary[func]['time'] = timefmt
+    va_result_dictionary[func][lineid]['time'] = timefmt
+    for a in args:
+        va_result_dictionary[func][lineid][a] = args[a]
+
+    va_result_dictionary[func]['count'] += 1
+    if va_result_dictionary[func]['count'] % 100 == 0:
+        with open(realtime_log_file % func, 'w') as outfile:
+            json.dump(va_result_dictionary[func], outfile, sort_keys=True, indent=2)
+
+
+#########################################################################################################
+#													#
+#			pcpipe    function								#
+#													#
+#########################################################################################################
+
+
+#********************    insert F10 values into F10_result_tbl      ******************************************
+def f10_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list):
+	line_ID=int(value_list[0])
+	incount=int(value_list[1])
+	outcount=int(value_list[2])
+	time_stamp=time.strftime('%Y%m%d%H%M%S')
+	flag_f10value=2
+	if (flag_f10value<=debug_flag):
+		print "F10 values: ",floornum,camnum,begin_time,end_time,line_ID,incount,outcount,time_stamp
+	cur.execute("insert into F10_result_tbl (cam_ID,begin_time,end_time,line_ID,incount,outcount,time_stamp) values('%d','%s','%s','%d','%d','%d',%s);"%(camnum,begin_time,end_time,line_ID,incount,outcount,time_stamp))
+
+	update_dictionary('f10', line_ID, time_stamp, inpeople=incount, outpeople=outcount)
+
+
+#**********************		 parse  F10_value 		**********************************************
+def F10(va_str,va_site,floornum,camnum,begin_time,end_time,cur):
+	if va_str[4:-1].find(";"):
+		line_str=va_str[4:-1].split(';')
+		line_num=len(line_str)
+		line_count=0
+		line_site=0
+		while (line_count<line_num):
+			value_list=line_str[line_site].split(',')
+			f10_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+			line_site +=1
+			line_count +=1
+	else :
+		value_list=va_str[4:-1].split(',')
+		f10_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+
+
+#********************    insert F20 values into F20_result_tbl        ****************************************
+def f20_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list):
+	line_ID=int(value_list[0])
+	inArm=int(value_list[1])
+	moveAlarm=int(value_list[2])
+	time_stamp=time.strftime('%Y%m%d%H%M%S')
+	flag_f20value=2
+	if (flag_f20value<=debug_flag):
+		print "F20 values: ",floornum,camnum,begin_time,end_time,line_ID,inArm,moveAlarm,time_stamp
+	cur.execute("insert into F20_result_tbl (cam_ID,begin_time,end_time,line_ID,inArm,moveAlarm,time_stamp) values('%d','%s','%s','%d','%d','%d',%s);"%(camnum,begin_time,end_time,line_ID,inArm,moveAlarm,time_stamp))
+
+#***********************             parse  F20_value             *********************************************
+def F20(va_str,va_site,floornum,camnum,begin_time,end_time,cur):
+	if va_str[4:-1].find(";"):
+		line_str=va_str[4:-1].split(';')
+		line_num=len(line_str)
+		line_count=0
+		line_site=0
+		while (line_count<line_num):
+			value_list=line_str[line_site].split(',')
+			f20_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+			line_site +=1
+			line_count +=1
+	else :
+		value_list=va_str[4:-1].split(',')
+		f20_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+
+
+#********************    insert F30 values into F30_result_tbl        *****************************************
+def f30_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list):
+	line_ID=int(value_list[0])
+	peoplecount=int(value_list[1])
+	timeDelay=int(value_list[2])
+	time_stamp=time.strftime('%Y%m%d%H%M%S')
+        flag_f30value=2
+        if (flag_f30value<=debug_flag):
+                print "F30 values: ",floornum,camnum,begin_time,end_time,line_ID,peoplecount,timeDelay,time_stamp
+        cur.execute("insert into F30_result_tbl (cam_ID,begin_time,end_time,line_ID,peoplecount,timeDelay,time_stamp) values('%d','%s','%s','%d','%d','%d',%s);"%(camnum,begin_time,end_time,line_ID,peoplecount,timeDelay,time_stamp))
+
+#**************************             parse F30_value             ********************************************
+def F30(va_str,va_site,floornum,camnum,begin_time,end_time,cur):
+	if va_str[4:-1].find(";"):
+		line_str=va_str[4:-1].split(';')
+		line_num=len(line_str)
+		line_count=0
+		line_site=0
+		while (line_count<line_num):
+			value_list=line_str[line_site].split(',')
+			f30_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+			line_site +=1
+			line_count +=1
+	else :
+		value_list=va_str[4:-1].split(',')
+		f30_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+
+
+#********************    insert F40 values into F40_result_tbl       *****************************************
+def f40_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list):
+	line_ID=int(value_list[0])
+	peoplecount=int(value_list[1])
+	time_stamp=time.strftime('%Y%m%d%H%M%S')
+        flag_f40value=2
+        if (flag_f40value<=debug_flag):
+                print "F40 values: ",floornum,camnum,begin_time,end_time,line_ID,peoplecount,time_stamp
+        cur.execute("insert into F40_result_tbl (cam_ID,begin_time,end_time,line_ID,peoplecount,time_stamp) values('%d','%s','%s','%d','%d',%s);"%(camnum,begin_time,end_time,line_ID,peoplecount,time_stamp))
+
+        update_dictionary('f40', line_ID, time_stamp, people=peoplecount)
+
+#**************************            parse F40_value          **********************************************
+def F40(va_str,va_site,floornum,camnum,begin_time,end_time,cur):
+
+	if va_str[4:-1].find(";"):
+		line_str=va_str[4:-1].split(';')
+		line_num=len(line_str)
+		line_count=0
+		line_site=0
+		while (line_count<line_num):
+			value_list=line_str[line_site].split(',')
+			f40_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+			line_site +=1
+			line_count +=1
+	else :
+		value_list=va_str[4:-1].split(',')
+		f40_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+
+
+#********************    insert F50 values into F50_result_tbl       *****************************************
+def f50_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list):
+        object_ID=value_list[0]
+        frame_ID=value_list[1]
+        points=value_list[2]
+        time_stamp=time.strftime('%Y%m%d%H%M%S')
+        flag_f50value=2
+        if (flag_f50value<=debug_flag):
+                print "F50 values: ",floornum,camnum,begin_time,object_ID,frame_ID,points,time_stamp
+        sql="insert into F50_result_tbl (cam_ID,time,object_ID,frame_ID,points,time_stamp) values('%d','%s','%s','%s','%s','%s');"%(camnum,begin_time,object_ID,frame_ID,points,time_stamp)
+        print sql
+        cur.execute(sql)
+
+#**************************            parse F50_value          **********************************************
+def F50(va_str,va_site,floornum,camnum,begin_time,end_time,cur):
+	if va_str[4:-1].find(";"):
+		line_str=va_str[4:-1].split(';')
+		print line_str
+		line_num=len(line_str)
+		line_count=0
+		line_site=0
+		while (line_count<line_num):
+			value_list=line_str[line_site].split(',')
+			f50_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+			line_site +=1
+			line_count +=1
+	else :
+		value_list=va_str[4:-1].split(',')
+		f50_db(va_str,va_site,floornum,camnum,begin_time,end_time,cur,debug_flag,value_list)
+	
+
+	
+#################################################################################################################
+#			main  function  interface								#
+#################################################################################################################
+
+def main():
+	try:
+        	conn=MySQLdb.connect(host='10.110.9.6',user='labmysql',passwd='123456',port=3306)
+        	cur=conn.cursor()
+#        	cur=''
+        	conn.select_db('ActiveDataDB')
+		client = KfkClient.KfkClient("localhost")
+
+		f=sys.stdin
+		lines=0
+		for line in client.get_line("va_result", 0):
+			if (debug_flag != 0):
+				sys.stdout.flush()
+				sys.stderr.flush()
+
+		#	line=f.readline()
+			if not line:
+				break
+			flag_line=1
+			if (flag_line<=debug_flag):
+                		print line
+			all_str=line[0:line.find('#')]
+			all_str_list=all_str.split('|')
+	       		head_str = all_str_list[0]
+			head_str_list=head_str.split(',')
+			flag_headlenth=2
+			if (flag_headlenth<=debug_flag):
+				print "head_str_list lenth:",len(head_str_list)
+			if len(head_str_list)<4:
+				print "The length of the head_str_list error !!!"
+				print all_str_list
+				raise Exception('Line Header String format errror: spit, < 4')
+			else:
+				flag_head=2
+				if (flag_head<=debug_flag):
+					print "head_str_list:%s"% head_str_list
+				floornum = str(head_str_list[0])
+				camnum = int(head_str_list[1])
+      				begin_time = str(head_str_list[2])
+				end_time = str(head_str_list[3])
+				va_num=len(all_str_list)
+				va_count=1
+				va_site=1
+				while (va_count<va_num):
+					va_str=all_str_list[va_site]
+					va_type=va_str[0:3]
+					flag_vatype=2
+					if (flag_vatype<=debug_flag):
+						print "va_type:%s"%va_type
+						print"va_str:%s"% va_str
+					if va_type=='F10':
+						if len(va_str)>5:
+							F10(va_str,1,floornum,camnum,begin_time,end_time,cur)
+						pass
+					elif va_type=='F20':
+						if len(va_str)>5:
+							F20(va_str,1,floornum,camnum,begin_time,end_time,cur)
+						pass
+					elif va_type=='F30':
+						if len(va_str)>5:
+							F30(va_str,1,floornum,camnum,begin_time,end_time,cur)
+						pass
+					elif va_type=='F40':
+						if len(va_str)>5:
+							F40(va_str,1,floornum,camnum,begin_time,end_time,cur)
+						pass
+					elif va_type=='F50':
+						if len(va_str)>5:
+							F50(va_str,1,floornum,camnum,begin_time,end_time,cur)
+						pass
+					else:
+						print "type error !!!!!"
+						print "va_type:%s"%va_type
+						print"va_str:%s"% va_str
+						#print all_str_list
+					va_site +=1
+					va_count +=1
+			lines+=1
+			if lines >= lines_max:
+				lines=0
+				#print out the log information to prevent hadoop think it is error
+				print "task active", time.strftime('%Y-%m-%d %H:%M:%S')
+				conn.commit()
+
+        	conn.commit()
+	       	cur.close()
+        	conn.close()
+	except MySQLdb.Error, e:
+        	print "Mysql Error %d: %s" % (e.args[0], e.args[1])
+	except BaseException, e:
+		print 'Unknown error (',str(e),') happened in pcpipe !!!'
+		conn.commit()
+		cur.close()
+		conn.close()
+
+
+	sys.stdout.flush()
+	sys.stderr.flush()
+
+	return None
+
+
+main()
+
+
+
+
+
+
+
+
+

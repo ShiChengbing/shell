@@ -1,0 +1,50 @@
+#!/bin/bash
+HN=`hostname`
+conf_name=$1
+echo 'conf_name' $conf_name
+mkdir -p /home/labadmin/va_tasks
+cd /home/labadmin/va_tasks
+cp /apps_root/task_dispatch/run_campc.sh ./
+rm -rf work_campc_task-nod*
+rm $HN.log
+pipe_pro=`ps axf|grep pcpipe|wc -l`
+if [ $pipe_pro -eq 1 ]
+then
+        echo "pcpipe: no process found !!!"
+else
+        sudo killall run_campc.sh
+        sudo killall cam_pc
+fi
+
+
+#floor_all=`awk '{print $1}' /apps_root/task_dispatch/$conf_name | tr '\n' ' '`
+#cam_all=`awk '{print $2}' /apps_root/task_dispatch/$conf_name | tr '\n' ' '`
+#floor_list=($floor_all)
+#cam_list=($cam_all)
+
+#line_max=`cat /apps_root/task_dispatch/$conf_name|wc -l`
+#let line_max=$line_max-1
+#for line_num in `seq 0 $line_max`
+#do	
+#        floor_name=${floor_list[$i]}
+#        cam_name=${cam_list[$i]}
+#	echo $floor_name $cam_name
+#	nohup ./run_campc.sh $floor_name $cam_name &
+#	campc_PID=$!
+#	echo $HN $campc_PID $floor_cam >> /home/labadmin/va_tasks/$HN.log
+#done
+
+cam_all=`awk '{print $2}' /apps_root/task_dispatch/$conf_name | tr '\n' ' '`
+for cam in $cam_all
+do
+
+	floor_cam=`grep $cam /apps_root/task_dispatch/$conf_name`
+	echo $floor_cam
+	nohup ./run_campc.sh $floor_cam &
+	campc_PID=$!	
+	echo $HN $campc_PID $floor_cam >> /home/labadmin/va_tasks/$HN.log
+done
+
+mkdir -p /apps_root/task_dispatch/task_log
+mv /home/labadmin/va_tasks/$HN.log /apps_root/task_dispatch/task_log/
+echo "$HN.log done" >/apps_root/task_dispatch/$HN.done

@@ -1,0 +1,331 @@
+         43244 function calls (42878 primitive calls) in 0.516 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 <string>:1(DecimalTuple)
+        1    0.000    0.000    0.000    0.000 CLIENT.py:8(<module>)
+        1    0.000    0.000    0.000    0.000 FIELD_TYPE.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 FLAG.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 __future__.py:48(<module>)
+        1    0.000    0.000    0.000    0.000 __future__.py:74(_Feature)
+        7    0.000    0.000    0.000    0.000 __future__.py:75(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1(<module>)
+        1    0.005    0.005    0.007    0.007 __init__.py:14(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:39(DBAPISet)
+        3    0.000    0.000    0.043    0.014 __init__.py:78(Connect)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:10(MySQLError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:15(Warning)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:20(Error)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:26(InterfaceError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:32(DatabaseError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:38(DataError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:45(OperationalError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:54(IntegrityError)
+        1    0.001    0.001    0.001    0.001 _mysql_exceptions.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:61(InternalError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:68(ProgrammingError)
+        1    0.000    0.000    0.000    0.000 _mysql_exceptions.py:75(NotSupportedError)
+        1    0.000    0.000    0.000    0.000 _strptime.py:103(__calc_am_pm)
+        1    0.000    0.000    0.000    0.000 _strptime.py:115(__calc_date_time)
+        1    0.002    0.002    0.005    0.005 _strptime.py:12(<module>)
+        1    0.000    0.000    0.000    0.000 _strptime.py:160(__calc_timezone)
+        1    0.000    0.000    0.000    0.000 _strptime.py:176(TimeRE)
+        1    0.000    0.000    0.003    0.003 _strptime.py:179(__init__)
+        4    0.000    0.000    0.000    0.000 _strptime.py:212(<genexpr>)
+        6    0.000    0.000    0.000    0.000 _strptime.py:221(__seqToRE)
+       49    0.000    0.000    0.000    0.000 _strptime.py:236(<genexpr>)
+        4    0.000    0.000    0.001    0.000 _strptime.py:240(pattern)
+        1    0.000    0.000    0.004    0.004 _strptime.py:263(compile)
+       28    0.000    0.000    0.000    0.000 _strptime.py:27(_getlang)
+       26    0.001    0.000    0.005    0.000 _strptime.py:295(_strptime)
+        1    0.000    0.000    0.000    0.000 _strptime.py:31(LocaleTime)
+        9    0.000    0.000    0.001    0.000 _strptime.py:453(_strptime_time)
+        1    0.000    0.000    0.001    0.001 _strptime.py:50(__init__)
+        1    0.000    0.000    0.000    0.000 _strptime.py:88(__calc_weekday)
+        1    0.000    0.000    0.000    0.000 _strptime.py:96(__calc_month)
+        9    0.000    0.000    0.000    0.000 _weakrefset.py:16(__init__)
+        9    0.000    0.000    0.000    0.000 _weakrefset.py:20(__enter__)
+        9    0.000    0.000    0.000    0.000 _weakrefset.py:26(__exit__)
+       21    0.000    0.000    0.000    0.000 _weakrefset.py:36(__init__)
+        9    0.000    0.000    0.000    0.000 _weakrefset.py:52(_commit_removals)
+       14    0.000    0.000    0.000    0.000 _weakrefset.py:58(__iter__)
+       12    0.000    0.000    0.000    0.000 _weakrefset.py:68(__contains__)
+       14    0.000    0.000    0.000    0.000 _weakrefset.py:81(add)
+        5    0.000    0.000    0.000    0.000 abc.py:105(register)
+      9/5    0.000    0.000    0.000    0.000 abc.py:148(__subclasscheck__)
+       37    0.000    0.000    0.000    0.000 abc.py:15(abstractmethod)
+        5    0.000    0.000    0.001    0.000 abc.py:86(__new__)
+       46    0.000    0.000    0.000    0.000 abc.py:89(<genexpr>)
+        1    0.000    0.000    0.002    0.002 active_db.py:12(connectADB)
+        1    0.000    0.000    0.000    0.000 active_db.py:25(closeADB)
+        1    0.002    0.002    0.009    0.009 active_db.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 bisect.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 calendar.py:126(Calendar)
+        1    0.000    0.000    0.000    0.000 calendar.py:132(__init__)
+        1    0.000    0.000    0.000    0.000 calendar.py:138(setfirstweekday)
+        1    0.000    0.000    0.000    0.000 calendar.py:21(IllegalMonthError)
+        1    0.000    0.000    0.000    0.000 calendar.py:255(TextCalendar)
+        1    0.000    0.000    0.000    0.000 calendar.py:28(IllegalWeekdayError)
+        1    0.000    0.000    0.000    0.000 calendar.py:372(HTMLCalendar)
+        1    0.000    0.000    0.000    0.000 calendar.py:47(_localized_month)
+        1    0.000    0.000    0.000    0.000 calendar.py:484(TimeEncoding)
+        1    0.000    0.000    0.000    0.000 calendar.py:496(LocaleTextCalendar)
+        2    0.000    0.000    0.000    0.000 calendar.py:50(<lambda>)
+        2    0.000    0.000    0.000    0.000 calendar.py:52(__init__)
+        1    0.000    0.000    0.000    0.000 calendar.py:531(LocaleHTMLCalendar)
+       26    0.000    0.000    0.000    0.000 calendar.py:55(__getitem__)
+        1    0.000    0.000    0.000    0.000 calendar.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 calendar.py:66(_localized_day)
+        2    0.000    0.000    0.000    0.000 calendar.py:71(__init__)
+       14    0.000    0.000    0.000    0.000 calendar.py:74(__getitem__)
+        1    0.004    0.004    0.007    0.007 collections.py:1(<module>)
+        1    0.001    0.001    0.001    0.001 collections.py:237(namedtuple)
+        1    0.000    0.000    0.000    0.000 collections.py:25(OrderedDict)
+       34    0.000    0.000    0.000    0.000 collections.py:277(<genexpr>)
+        4    0.000    0.000    0.000    0.000 collections.py:294(<genexpr>)
+        1    0.000    0.000    0.000    0.000 collections.py:356(Counter)
+        1    0.000    0.000    0.040    0.040 config_db.py:11(connectCDB)
+        1    0.000    0.000    0.000    0.000 config_db.py:23(closeCDB)
+        1    0.000    0.000    0.000    0.000 config_db.py:3(<module>)
+        3    0.000    0.000    0.000    0.000 connections.py:195(_get_string_literal)
+     1155    0.001    0.000    0.005    0.000 connections.py:196(string_literal)
+        3    0.000    0.000    0.000    0.000 connections.py:200(_get_unicode_literal)
+        3    0.000    0.000    0.000    0.000 connections.py:205(_get_string_decoder)
+        3    0.000    0.000    0.000    0.000 connections.py:234(cursor)
+      231    0.000    0.000    0.009    0.000 connections.py:253(literal)
+        3    0.000    0.000    0.000    0.000 connections.py:287(set_character_set)
+       12    0.000    0.000    0.000    0.000 connections.py:40(numeric_part)
+        1    0.000    0.000    0.000    0.000 connections.py:56(Connection)
+        3    0.006    0.002    0.039    0.013 connections.py:62(__init__)
+        1    0.001    0.001    0.003    0.003 connections.py:8(<module>)
+        1    0.003    0.003    0.031    0.031 converters.py:33(<module>)
+      462    0.001    0.000    0.001    0.000 converters.py:55(Thing2Str)
+      673    0.007    0.000    0.018    0.000 cursors.py:117(_do_get_result)
+     2692    0.002    0.000    0.002    0.000 cursors.py:134(_get_db)
+      673    0.006    0.000    0.279    0.000 cursors.py:139(execute)
+        1    0.000    0.000    0.000    0.000 cursors.py:25(BaseCursor)
+      673    0.004    0.000    0.237    0.000 cursors.py:277(_do_query)
+      673    0.001    0.000    0.015    0.000 cursors.py:286(_fetch_row)
+        1    0.000    0.000    0.000    0.000 cursors.py:306(CursorStoreResultMixIn)
+      673    0.002    0.000    0.007    0.000 cursors.py:313(_get_result)
+      673    0.002    0.000    0.256    0.000 cursors.py:315(_query)
+      673    0.002    0.000    0.017    0.000 cursors.py:320(_post_get_result)
+      504    0.002    0.000    0.002    0.000 cursors.py:324(fetchone)
+        1    0.000    0.000    0.000    0.000 cursors.py:377(CursorUseResultMixIn)
+        1    0.000    0.000    0.000    0.000 cursors.py:427(CursorTupleRowsMixIn)
+        1    0.000    0.000    0.000    0.000 cursors.py:435(CursorDictRowsMixIn)
+        1    0.000    0.000    0.000    0.000 cursors.py:467(CursorOldDictRowsMixIn)
+        1    0.000    0.000    0.000    0.000 cursors.py:476(Cursor)
+        1    0.000    0.000    0.000    0.000 cursors.py:483(DictCursor)
+        1    0.000    0.000    0.000    0.000 cursors.py:490(SSCursor)
+        1    0.000    0.000    0.000    0.000 cursors.py:497(SSDictCursor)
+        3    0.000    0.000    0.000    0.000 cursors.py:50(__init__)
+        1    0.001    0.001    0.002    0.002 cursors.py:6(<module>)
+      504    0.000    0.000    0.000    0.000 cursors.py:78(_check_executed)
+      673    0.006    0.000    0.006    0.000 cursors.py:82(_warning_check)
+      441    0.006    0.000    0.211    0.000 data_migration_f30.py:14(F30_dump_sum_time_line)
+        1    0.009    0.009    0.516    0.516 data_migration_f30.py:2(<module>)
+        1    0.000    0.000    0.001    0.001 data_migration_f30.py:35(get_line_list)
+        1    0.008    0.008    0.498    0.498 data_migration_f30.py:46(main)
+        1    0.007    0.007    0.028    0.028 decimal.py:116(<module>)
+        1    0.000    0.000    0.000    0.000 decimal.py:161(DecimalException)
+        1    0.000    0.000    0.000    0.000 decimal.py:184(Clamped)
+        1    0.000    0.000    0.000    0.000 decimal.py:196(InvalidOperation)
+        1    0.000    0.000    0.000    0.000 decimal.py:225(ConversionSyntax)
+        1    0.000    0.000    0.000    0.000 decimal.py:235(DivisionByZero)
+        1    0.000    0.000    0.000    0.000 decimal.py:251(DivisionImpossible)
+        1    0.000    0.000    0.000    0.000 decimal.py:262(DivisionUndefined)
+        1    0.000    0.000    0.000    0.000 decimal.py:273(Inexact)
+        1    0.000    0.000    0.000    0.000 decimal.py:285(InvalidContext)
+        1    0.000    0.000    0.000    0.000 decimal.py:299(Rounded)
+        1    0.000    0.000    0.000    0.000 decimal.py:311(Subnormal)
+        1    0.000    0.000    0.000    0.000 decimal.py:322(Overflow)
+        1    0.000    0.000    0.000    0.000 decimal.py:360(Underflow)
+        1    0.000    0.000    0.000    0.000 decimal.py:3742(_ContextManager)
+        1    0.000    0.000    0.000    0.000 decimal.py:3757(Context)
+        3    0.000    0.000    0.000    0.000 decimal.py:3776(__init__)
+       27    0.000    0.000    0.000    0.000 decimal.py:3803(<genexpr>)
+       27    0.000    0.000    0.000    0.000 decimal.py:3810(<genexpr>)
+        1    0.000    0.000    0.000    0.000 decimal.py:506(Decimal)
+      468    0.006    0.000    0.011    0.000 decimal.py:515(__new__)
+        1    0.000    0.000    0.000    0.000 decimal.py:5412(_WorkRep)
+        1    0.000    0.000    0.000    0.000 decimal.py:5666(_Log10Memoize)
+        1    0.000    0.000    0.000    0.000 decimal.py:5670(__init__)
+      462    0.002    0.000    0.004    0.000 decimal.py:994(__repr__)
+      924    0.005    0.000    0.005    0.000 decimal.py:999(__str__)
+        1    0.003    0.003    0.003    0.003 heapq.py:31(<module>)
+        1    0.000    0.000    0.001    0.001 history_db.py:24(connectHDB)
+        1    0.000    0.000    0.000    0.000 history_db.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 history_db.py:37(closeHDB)
+        1    0.000    0.000    0.000    0.000 keyword.py:11(<module>)
+       28    0.000    0.000    0.000    0.000 locale.py:339(normalize)
+       28    0.000    0.000    0.000    0.000 locale.py:407(_parse_localename)
+       28    0.000    0.000    0.000    0.000 locale.py:506(getlocale)
+        1    0.000    0.000    0.000    0.000 numbers.py:13(Number)
+        1    0.000    0.000    0.000    0.000 numbers.py:169(Real)
+        1    0.000    0.000    0.000    0.000 numbers.py:270(Rational)
+        1    0.000    0.000    0.000    0.000 numbers.py:295(Integral)
+        1    0.000    0.000    0.000    0.000 numbers.py:34(Complex)
+        1    0.001    0.001    0.003    0.003 numbers.py:6(<module>)
+       17    0.000    0.000    0.015    0.001 re.py:188(compile)
+       43    0.000    0.000    0.000    0.000 re.py:204(escape)
+       17    0.000    0.000    0.015    0.001 re.py:226(_compile)
+        8    0.000    0.000    0.000    0.000 re.py:248(_compile_repl)
+        8    0.000    0.000    0.000    0.000 re.py:268(_subx)
+        1    0.000    0.000    0.000    0.000 release.py:2(<module>)
+       45    0.000    0.000    0.002    0.000 sre_compile.py:178(_compile_charset)
+       45    0.001    0.000    0.002    0.000 sre_compile.py:207(_optimize_charset)
+       36    0.000    0.000    0.000    0.000 sre_compile.py:24(_identityfunction)
+        3    0.000    0.000    0.000    0.000 sre_compile.py:258(_mk_bitmap)
+   104/11    0.002    0.000    0.004    0.000 sre_compile.py:32(_compile)
+       31    0.000    0.000    0.000    0.000 sre_compile.py:354(_simple)
+       11    0.000    0.000    0.001    0.000 sre_compile.py:361(_compile_info)
+       22    0.000    0.000    0.000    0.000 sre_compile.py:474(isstring)
+       11    0.000    0.000    0.006    0.001 sre_compile.py:480(_code)
+       11    0.000    0.000    0.014    0.001 sre_compile.py:495(compile)
+       60    0.000    0.000    0.000    0.000 sre_compile.py:51(fixup)
+      154    0.000    0.000    0.000    0.000 sre_parse.py:126(__len__)
+      370    0.000    0.000    0.001    0.000 sre_parse.py:130(__getitem__)
+       31    0.000    0.000    0.000    0.000 sre_parse.py:134(__setitem__)
+      171    0.000    0.000    0.000    0.000 sre_parse.py:138(append)
+   130/44    0.001    0.000    0.001    0.000 sre_parse.py:140(getwidth)
+       13    0.000    0.000    0.000    0.000 sre_parse.py:178(__init__)
+     1165    0.002    0.000    0.003    0.000 sre_parse.py:182(__next)
+      338    0.000    0.000    0.001    0.000 sre_parse.py:195(match)
+     1010    0.001    0.000    0.003    0.000 sre_parse.py:201(get)
+       88    0.000    0.000    0.000    0.000 sre_parse.py:210(isident)
+       20    0.000    0.000    0.000    0.000 sre_parse.py:216(isname)
+       10    0.000    0.000    0.000    0.000 sre_parse.py:225(_class_escape)
+       37    0.000    0.000    0.000    0.000 sre_parse.py:257(_escape)
+    47/11    0.001    0.000    0.008    0.001 sre_parse.py:301(_parse_sub)
+    64/11    0.003    0.000    0.008    0.001 sre_parse.py:379(_parse)
+       11    0.000    0.000    0.009    0.001 sre_parse.py:663(parse)
+       11    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:691(parse_template)
+        3    0.000    0.000    0.000    0.000 sre_parse.py:698(literal)
+       28    0.000    0.000    0.000    0.000 sre_parse.py:72(opengroup)
+       28    0.000    0.000    0.000    0.000 sre_parse.py:83(closegroup)
+      104    0.000    0.000    0.000    0.000 sre_parse.py:90(__init__)
+        1    0.000    0.000    0.001    0.001 threading.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:103(_RLock)
+        2    0.000    0.000    0.000    0.000 threading.py:180(Condition)
+        1    0.000    0.000    0.000    0.000 threading.py:183(_Condition)
+        2    0.000    0.000    0.000    0.000 threading.py:185(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:225(_is_owned)
+        1    0.000    0.000    0.000    0.000 threading.py:276(notify)
+        1    0.000    0.000    0.000    0.000 threading.py:294(notifyAll)
+        1    0.000    0.000    0.000    0.000 threading.py:303(_Semaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:351(_BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:363(Event)
+        1    0.000    0.000    0.000    0.000 threading.py:366(_Event)
+        1    0.000    0.000    0.000    0.000 threading.py:370(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:384(set)
+        1    0.000    0.000    0.000    0.000 threading.py:423(Thread)
+        1    0.000    0.000    0.000    0.000 threading.py:435(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:530(_set_ident)
+        1    0.000    0.000    0.000    0.000 threading.py:55(_Verbose)
+        4    0.000    0.000    0.000    0.000 threading.py:57(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:62(_note)
+        1    0.000    0.000    0.000    0.000 threading.py:732(_Timer)
+        1    0.000    0.000    0.000    0.000 threading.py:761(_MainThread)
+        1    0.000    0.000    0.000    0.000 threading.py:763(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:770(_set_daemon)
+        1    0.000    0.000    0.000    0.000 threading.py:801(_DummyThread)
+        2    0.000    0.000    0.012    0.006 time_disposal.py:10(format_time)
+        1    0.000    0.000    0.000    0.000 time_disposal.py:2(<module>)
+       15    0.000    0.000    0.001    0.000 time_disposal.py:23(count_time)
+        9    0.000    0.000    0.001    0.000 time_disposal.py:30(unix_time)
+        1    0.000    0.000    0.014    0.014 time_disposal.py:35(dump_line_time)
+        1    0.002    0.002    0.002    0.002 times.py:5(<module>)
+        1    0.000    0.000    0.001    0.001 warnings.py:45(filterwarnings)
+       28    0.000    0.000    0.000    0.000 {_locale.setlocale}
+        3    0.001    0.000    0.001    0.000 {_mysql.get_client_info}
+       11    0.000    0.000    0.000    0.000 {_sre.compile}
+       98    0.000    0.000    0.000    0.000 {_sre.getlower}
+        6    0.000    0.000    0.000    0.000 {_weakref.proxy}
+        3    0.000    0.000    0.000    0.000 {abs}
+        4    0.000    0.000    0.000    0.000 {all}
+      473    0.001    0.000    0.001    0.000 {built-in method __new__ of type object at 0x88d8a0}
+      442    0.001    0.000    0.001    0.000 {built-in method describe}
+      442    0.003    0.000    0.014    0.000 {built-in method fetch_row}
+      442    0.000    0.000    0.000    0.000 {built-in method field_flags}
+       17    0.003    0.000    0.013    0.001 {built-in method strptime}
+        1    0.000    0.000    0.000    0.000 {chr}
+      213    0.000    0.000    0.000    0.000 {getattr}
+        2    0.000    0.000    0.000    0.000 {hasattr}
+     1793    0.002    0.000    0.002    0.000 {isinstance}
+    20/11    0.000    0.000    0.000    0.000 {issubclass}
+7206/7164    0.001    0.000    0.002    0.000 {len}
+        1    0.000    0.000    0.000    0.000 {locals}
+        1    0.000    0.000    0.000    0.000 {map}
+       24    0.000    0.000    0.000    0.000 {max}
+        4    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        1    0.000    0.000    0.000    0.000 {method '__getitem__' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 {method '__subclasses__' of 'type' objects}
+        9    0.000    0.000    0.000    0.000 {method '__subclasshook__' of 'object' objects}
+        2    0.000    0.000    0.000    0.000 {method 'acquire' of 'thread.lock' objects}
+       82    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+      673    0.000    0.000    0.000    0.000 {method 'affected_rows' of '_mysql.connection' objects}
+     2977    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+        3    0.001    0.000    0.001    0.000 {method 'autocommit' of '_mysql.connection' objects}
+      679    0.001    0.000    0.001    0.000 {method 'character_set_name' of '_mysql.connection' objects}
+        3    0.000    0.000    0.000    0.000 {method 'close' of '_mysql.connection' objects}
+      234    0.135    0.001    0.135    0.001 {method 'commit' of '_mysql.connection' objects}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       26    0.000    0.000    0.000    0.000 {method 'end' of '_sre.SRE_Match' objects}
+      231    0.003    0.000    0.008    0.000 {method 'escape' of '_mysql.connection' objects}
+        8    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+      198    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 {method 'get_server_info' of '_mysql.connection' objects}
+     1870    0.001    0.000    0.001    0.000 {method 'group' of '_sre.SRE_Match' objects}
+       26    0.000    0.000    0.000    0.000 {method 'groupdict' of '_sre.SRE_Match' objects}
+        3    0.000    0.000    0.000    0.000 {method 'has_key' of 'dict' objects}
+       19    0.000    0.000    0.000    0.000 {method 'index' of 'str' objects}
+      673    0.000    0.000    0.000    0.000 {method 'info' of '_mysql.connection' objects}
+        2    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+      673    0.000    0.000    0.000    0.000 {method 'insert_id' of '_mysql.connection' objects}
+       30    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'isdigit' of 'str' objects}
+       22    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       26    0.000    0.000    0.000    0.000 {method 'iterkeys' of 'dict' objects}
+     50/7    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       46    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+      503    0.003    0.000    0.003    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+       12    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+      673    0.215    0.000    0.215    0.000 {method 'query' of '_mysql.connection' objects}
+        1    0.000    0.000    0.000    0.000 {method 'release' of 'thread.lock' objects}
+       28    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        9    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+      122    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        3    0.001    0.000    0.001    0.000 {method 'select_db' of '_mysql.connection' objects}
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        7    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+      673    0.005    0.000    0.005    0.000 {method 'store_result' of '_mysql.connection' objects}
+       38    0.000    0.000    0.000    0.000 {method 'strftime' of 'datetime.date' objects}
+     1155    0.002    0.000    0.004    0.000 {method 'string_literal' of '_mysql.connection' objects}
+      465    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {method 'sub' of '_sre.SRE_Pattern' objects}
+       53    0.000    0.000    0.000    0.000 {method 'toordinal' of 'datetime.date' objects}
+       28    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+      673    0.000    0.000    0.000    0.000 {method 'warning_count' of '_mysql.connection' objects}
+       26    0.000    0.000    0.000    0.000 {method 'weekday' of 'datetime.date' objects}
+      222    0.000    0.000    0.000    0.000 {min}
+      132    0.000    0.000    0.000    0.000 {ord}
+       21    0.000    0.000    0.000    0.000 {range}
+        1    0.000    0.000    0.000    0.000 {repr}
+        6    0.000    0.000    0.000    0.000 {sorted}
+        1    0.000    0.000    0.000    0.000 {sys._getframe}
+        4    0.000    0.000    0.000    0.000 {thread.allocate_lock}
+        2    0.000    0.000    0.000    0.000 {thread.get_ident}
+        9    0.000    0.000    0.000    0.000 {time.mktime}
+      239    0.005    0.000    0.005    0.000 {time.strftime}
+        9    0.000    0.000    0.001    0.000 {time.strptime}
+        1    0.000    0.000    0.000    0.000 {time.tzset}
+        1    0.000    0.000    0.000    0.000 {zip}
+
+
